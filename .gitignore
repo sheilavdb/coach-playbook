@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# testpages
+LoginFormFromStackOverflow.js
+FileFromStackOverflow.js
+AppJsFile.js
