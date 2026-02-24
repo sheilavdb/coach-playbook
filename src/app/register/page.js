@@ -12,6 +12,8 @@ export default function RegisterPage() {
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
     const [confirm, setConfirm] = useState("");
+    const [clubName,setClubName] = useState("");
+    const [teamAge, setTeamAge] = useState("");
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
     const router = useRouter();
@@ -33,6 +35,8 @@ export default function RegisterPage() {
             await setDoc(doc(db, "coaches", user.uid), {
                 name: name,
                 email: email,
+                clubName: clubName,
+                teamAge: teamAge,
                 subscription: "free",
                 createdAt: new Date(),
             });
@@ -66,28 +70,49 @@ export default function RegisterPage() {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
-                    />
+                    /><br />
                     <input 
                         type="email" 
                         placeholder="Email" 
                         value={email} 
                         onChange={(e) => setEmail(e.target.value)}
                         required 
-                    />
+                    /><br />
+                    <input
+                        type="text"
+                        placeholder="Club Name"
+                        value={clubName}
+                        onChange={(e) => setClubName(e.target.value)}
+                        required
+                    /><br />
+                    <select
+                        placeholder="Age Group"
+                        value={teamAge}
+                        onChange={(e) => setTeamAge(e.target.value)}
+                        required>
+                            <option value="">Select age group</option>
+                            <option value="U8">U8</option>
+                            <option value="U10">U10</option>
+                            <option value="U12">U12</option>
+                            <option value="U14">U14</option>
+                            <option value="U16">U16</option>
+                            <option value="U18">U18</option>
+                            <option value="Senior">Senior</option>
+                    </select><br />
                     <input 
                         type="password" 
                         placeholder="Password" 
                         value={password} 
                         onChange={(e) => setPassword(e.target.value)} 
                         required
-                    />
+                    /><br />
                     <input 
                         type="password" 
                         placeholder="Confirm Password" 
                         value={confirm} 
                         onChange={(e) => setConfirm(e.target.value)} 
                         required
-                    />
+                    /><br /><br />
                     <button
                         type="submit"
                         disabled={loading}
