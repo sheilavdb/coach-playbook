@@ -25,23 +25,28 @@ export default function Sidebar() {
             <nav>
                 <ul className="flex flex-col gap-2">
                     <li>
-                        <Link href="/dashboard" className="flex items-center py-2 px-4 rounded-lg hover:bg-accent hover:text-white transition-colors">
+                        <Link href="/dashboard" className="flex items-center py-2 px-4 rounded-lg hover:bg-primary-hover hover:text-white transition-colors">
                             Dashboard
                         </Link>
                     </li>
                     <li>
-                        <Link href="/drills" className="flex items-center py-2 px-4 rounded-lg hover:bg-accent hover:text-white transition-colors">
+                        <Link href="/drills" className="flex items-center py-2 px-4 rounded-lg hover:bg-primary-hover hover:text-white transition-colors">
                             Drills
                         </Link>
                     </li>
                     <li>
-                        <Link href="/sessions" className="flex items-center py-2 px-4 rounded-lg hover:bg-accent hover:text-white transition-colors">
+                        <Link href="/sessions" className="flex items-center py-2 px-4 rounded-lg hover:bg-primary-hover hover:text-white transition-colors">
                             Sessions
+                        </Link>
+                    </li>
+                                        <li>
+                        <Link href="/aboutf11" className="flex items-center py-2 px-4 rounded-lg hover:bg-primary-hover hover:text-white transition-colors">
+                            About Fifa 11+
                         </Link>
                     </li>
                 </ul>
             </nav>
-            <button onClick={handleLogout} className="mt-auto py-2 px-4 bg-soft-red text-white rounded-lg">Log Out</button>
+            <button onClick={handleLogout} className="mt-auto mx-auto py-2 px-4 bg-soft-red text-white rounded-lg hover:bg-soft-red-hover"><span>Log Out</span></button>
         </div>
     )
 }
